@@ -1,0 +1,196 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,600;1,500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+    
+}
+
+body {
+    background-color: var(--Light-gray);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.container {
+    display: grid;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.container .card {
+   padding: 2em;
+   margin: 1em 0;
+   border-radius: 5px;
+}
+
+.card-header {
+  display: flex;
+  padding: 0.5em 0;
+}
+
+.card-header img {
+    width: 10%;
+    border-radius: 50%;
+}
+
+.card-header .heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1em;
+}
+
+#card1 {
+  background-color: var(--Moderate-violet);
+  position: relative;
+}
+#card1::before {
+ content: "";
+ position: absolute;
+ background-image: url(./images/bg-pattern-quotation.svg);
+ background-repeat: no-repeat;
+ width: 40%;
+ height: 50%;
+ right: 0;
+ top: 0;
+}
+
+#card2 {
+    background-color: var(--Very-dark-grayish-blue);
+}
+#card3 {
+    background-color: var(--White);
+    
+}
+
+#card4 {
+    background-color: var(--Very-dark-blackish-blue);
+}
+#card5 {
+    background-color: var(--White);
+}
+
+h1 {
+    padding: 0.8em 0;
+  font-size: 1.3rem;
+  line-height: 15px;
+  opacity: 80%;
+}
+h3 {
+  font-size: 0.9rem;
+}
+h4 {
+  font-size: 0.8rem;
+  opacity: 50%;
+}
+p {
+   
+  line-height: 15px;
+  opacity: 70%;
+}
+
+/* Utility-Classes */
+
+.font-color1 {
+   color: white;
+}
+
+.font-color2 {
+   color: var(--Very-dark-blackish-blue);
+}
+@media screen and (min-width:500px){
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .container {
+    display: grid;
+    grid-template-areas: 
+    "second first first"
+    "fourth fourth fifth"
+    "third  third fifth";
+    gap: 1rem;
+    padding: 2em;
+    
+  }
+  .container .card {
+    margin: 0;
+ }
+ #card1 {
+   grid-area: first;
+   
+ }
+ #card2{
+  grid-area: second;
+ }
+ #card3 {
+  grid-area: third;
+ }
+ #card4 {
+ grid-area: fourth;
+ }
+ #card5{
+  grid-area: fifth;
+ }
+
+}
+
+@media screen and (min-width:800px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    
+  }
+   .container {
+      display: grid;
+      grid-template-areas: 
+      "first first second fifth"
+      "third fourth fourth fifth";
+     gap: 1rem;
+   }
+   .container .card {
+      margin: 0;
+   }
+   #card1 {
+     grid-area: first;
+     
+   }
+   #card2{
+    grid-area: second;
+   }
+   #card3 {
+    grid-area: third;
+   }
+   #card4 {
+   grid-area: fourth;
+   }
+   #card5{
+    grid-area: fifth;
+   }
+}
+@media screen and (max-width:500px){
+   
+  .container {
+    padding: 2em;
+  }
+}
